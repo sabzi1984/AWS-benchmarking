@@ -1,0 +1,121 @@
+{%extends "layout.html"%}
+{%block content%}
+
+<h1>Benchmarking AWS-EC2 Load Balancing and two types of Instances</h1>
+<table style="width:70%">
+<caption style="caption-side:top">Instance implemented in this survey</caption>
+  <tr>
+    <th>Instance Type</th>
+    <th style="width:60px">vCPUs </th>
+    <th>Memory (GiB) </th>
+    <th>Network Performance </th>
+    <th>On-Demand Linux Pricing </th>
+  </tr>
+  <tr>
+    <td>t2.xlarge</td>
+    <td>4</td>
+    <td>16</td>
+    <td>Moderate</td>
+    <td>0.1856 USD/hour</td>
+  </tr>
+    <tr>
+    <td>m4.large</td>
+    <td>2</td>
+    <td>8</td>
+    <td>Moderate</td>
+    <td>0.1 USD/hour</td>
+  </tr>
+</table>
+<table style="width:70%">
+<caption style="caption-side:top">Clusters</caption>
+  <tr>
+    <th>Cluster No.</th>
+    <th>Instance Type </th>
+    <th>Number in cluster </th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>t2.xlarge</td>
+    <td>5</td>
+
+  </tr>
+    <tr>
+    <td>2</td>
+    <td>m4.large</td>
+    <td>5</td>
+  </tr>
+</table>
+
+<h2>The Figures 1 to 4 shows benchmarking of application load balancer</h2>
+<figure >
+    <img src="{{ url_for('static', filename='healthy_count_.png') }}"
+         alt="">
+    <figcaption >
+          fig.1: Healthy Host count 
+
+      </figcaption>
+</figure>
+
+
+<figure >
+    <img src="{{ url_for('static', filename='request_count.png') }}"
+         alt="">
+    <figcaption >
+          fig.2: Request Count at different AZ and TG
+
+      </figcaption>
+</figure>
+<figure >
+    <img src="{{ url_for('static', filename='httpcode_target.png') }}"
+         alt="">
+    <figcaption >
+          fig.3: HTTPCode Target 2XX
+
+      </figcaption>
+</figure>
+<figure >
+    <img src="{{ url_for('static', filename='target_response_time_TG_AZ.png') }}"
+         alt="">
+    <figcaption >
+          fig.4: Target Response Time
+
+      </figcaption>
+</figure>
+<h2>The Figures 5 and 6 shows benchmarking of application load balancer</h2>
+<figure >
+    <img src="{{ url_for('static', filename='cpuutilization.png') }}"
+         alt="">
+    <figcaption >
+          fig.5: CPU Utilization of Instances
+
+      </figcaption>
+      </figure>
+  <figure >
+    <img src="{{ url_for('static', filename='networkin.png') }}"
+         alt="">
+    <figcaption >
+          fig.6: Network In of instances
+
+      </figcaption>
+</figure>
+<h2>The Figures 7 and 8 shows benchmarking of Ubuntu image used in this survey</h2>
+
+  <figure >
+    <img src="{{ url_for('static', filename='cpu_image.png') }}"
+         alt="">
+    <figcaption >
+          fig.7: CPU Utilization of Image
+
+      </figcaption>
+</figure>
+
+  <figure >
+    <img src="{{ url_for('static', filename='networkin_image.png') }}"
+         alt="">
+    <figcaption >
+          fig.8: Network In of Image
+
+      </figcaption>
+</figure>
+
+{%endblock content%}
